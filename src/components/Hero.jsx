@@ -23,7 +23,7 @@ const Hero = () => {
 
         <motion.h1 className="hero-bg-inifinit-text" variants={sliderVariant} initial="initial" animate="animate">Front-End Developer</motion.h1>
             <div className=" flex items-center justify-center h-full overflow-hidden">
-                <img className="z-10 w-3/5" src="/avatar.webp" alt="avatar image" />
+                <img className="z-10 w-3/5" src="/avatar.webp" alt="avatar image"/>
             </div>
         </div>
     )
