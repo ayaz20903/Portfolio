@@ -9,10 +9,11 @@ import Navbar from "../components/Navbar";
 const IndexPage = () => {
   return (
     <main>  
-        <Navbar/>
         <section className="slider">
           <Hero/>
         </section>
+        {/* <Navbar/> */}
+
         <section className="slider">
           <About/>
         </section>
