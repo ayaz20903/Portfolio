@@ -19,6 +19,10 @@ html{
   font-family: "Lato", sans-serif;
 }
 
+p{
+  margin: 0;
+}
+
 body{
   color: lightgray;
   background-color: #141416;
@@ -37,7 +41,7 @@ h2{
 }
 
 p{
-  margin-top: 25px;
+  // margin-top: 25px;
   font-size: 18px;
 }
 
@@ -52,20 +56,10 @@ a{
 }
 
 nav{
-  z-index: 111;
-  .logo-container{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    background: white;
-    border-radius: 28px;
-    padding: 10px 30px;
-  }
   h1{
     font-size: 28px;
-    font-weight: 800;
-    color: #141416;
-    // letter-spacing: 4px;
+    font-weight: 700;
+    letter-spacing: 4px;
   }
 
     .logo{
@@ -82,6 +76,10 @@ nav{
   .myElement{
     display: inline-block;
     cursor: default;
+    white-space: pre;
+    font-size: 60px;
+    line-height: 1;
+
   }
 
   .bounce{
@@ -125,11 +123,12 @@ nav{
     // top: 15.4%;
     // left: 24.8%;
 
-    @media only screen and (max-width: 500px) {
-      width: 29%;
+    @media only screen and (max-width: 600px) {
+      width: 27%;
       height: auto;
-      top: 29%;
-      left: 25%;
+      top: -16%;
+      left: -19%;
+      z-index: 99;
     }
   }
   .laptop-img{
@@ -141,8 +140,8 @@ nav{
     // transform: translate(-50%, -50%);
     z-index: -1;
 
-    @media only screen and (max-width: 500px) {
-      transform: translate(-50%, -43%);
+    @media only screen and (max-width: 600px) {
+      transform: translate(0%, 0%);
     }
   }
 
@@ -167,17 +166,23 @@ nav{
   // background: linear-gradient(#f551b4, #3089b0);
 //   -webkit-background-clip: text;
 //   // background-clip: text;
-background-image: url("../public/stars.png");
+  .hero-bg{
+    background-image: url("../public/stars.png");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    background-repeat: repeat-x;
+  }
 
   .hero-bg-inifinit-text {
     position: absolute;
     white-space: nowrap; 
-    // width: 100%;
     top: 0;
     text-transform: uppercase;  
     -webkit-text-fill-color: transparent;
-    // background-im  age: linear-gradient(#9c27b0, #dce6eb);
-    // background: rgb(156,39,176);
     background-image: linear-gradient(180deg, rgba(156,39,176,1) 0%, rgba(194,152,211,1) 70%, rgba(220,230,235,1) 100%);
     background-repeat: repeat-x;
     -webkit-background-clip: text;
@@ -185,9 +190,12 @@ background-image: url("../public/stars.png");
     font-size: 550px;
     font-weight: 800;
     line-height: 1;
-    // height: 60vh;
-    // letter-spacing: -10px;
     font-family: "Thunder",sans-serif;
+
+    @media screen and (max-width:600px) {
+      top: 25%;
+      font-size: 320px;
+    }
   }
 
   .hero-home-overlay {
@@ -215,6 +223,111 @@ background-image: url("../public/stars.png");
   }
 }
 
+@mixin dynamic-box-shadow($color) {
+  &:hover {
+    box-shadow: 0px 0px 20px 2px $color;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+  }
+}
+
+.skills-section{
+
+  .top-text{
+    p{
+      font-size: 17px;
+
+      @media only screen and (max-width: 600px) {
+        font-size: 16px;
+      }
+
+    }
+  }
+  .skills_brands{
+    width: 75%;
+    margin: 0 auto;
+  
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
+  
+    .skill{
+      margin: 20px 30px;
+      text-align: center;
+  
+      @media only screen and (max-width: 600px) {
+        text-align: center;
+        margin: 15px 0;
+        align-items: center;
+        width: 33%;
+        display: flex;
+        flex-direction: column;
+      }
+      svg,img{
+        width: 70px;
+        height: 70px;
+        @media only screen and (max-width: 600px) {
+          width: 50px;
+          height: 40px;
+        }
+      }
+      p{
+        margin-top: 12.5px;
+        line-height: normal;
+      }
+     
+      .javaScript{
+        @include dynamic-box-shadow(#F7E018);
+      }
+      .react{
+        @include dynamic-box-shadow(#0C9FCB);
+      }
+      .node{
+        @include dynamic-box-shadow(#8CC84B);
+      }
+      .html{
+        @include dynamic-box-shadow(#E44D26);
+      }
+      .css{
+        @include dynamic-box-shadow(#264DE4);
+      }
+      .wordpress{
+        @include dynamic-box-shadow(#28799E);
+      }
+      .sass{
+        @include dynamic-box-shadow(#BF558A);
+      }
+      .bootstrap{
+        @include dynamic-box-shadow(#5B4380);
+      }
+      .git{
+        @include dynamic-box-shadow(#E84D31);
+      }
+      .vsCode{
+        @include dynamic-box-shadow(#0A69A8);
+      }
+      .figma{
+        @include dynamic-box-shadow(#F24E1E);
+      }
+      .shopify{
+        @include dynamic-box-shadow(#95BF46);
+      }
+    }
+  }
+}
+
+.project-section{
+  .animationLoader{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    margin: 5px;
+  }
+}
+
+
+
 
 
 
@@ -229,10 +342,10 @@ background-image: url("../public/stars.png");
       fill: #000;
   }
   60% {
-      fill: #fff;
+      fill: #9c27b0;
   }
   99% {
-      fill: #fff;
+      fill: #9c27b0;
   }
   100% {
       fill: #000;
